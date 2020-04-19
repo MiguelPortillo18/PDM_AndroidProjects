@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Contact</string>
+    <string name="name_title">Miguel Portillo</string>
+    <string name="career_subtitle">Ingeniero Informático</string>
+    <string name="email_hint">Your Email</string>
+    <string name="message_hint">Write what you need</string>
+    <string name="contact_action">Contact</string>
+    <string name="title_email">email</string>
+    <string name="title_message">message</string>
+</resources>
