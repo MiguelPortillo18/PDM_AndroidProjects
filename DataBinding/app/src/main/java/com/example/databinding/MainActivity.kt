@@ -17,27 +17,45 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+        //Usando DataBindng
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.inCounter = inCounter
         binding.outCounter = outCounter
 
-        addCounterActions()
+        binding.apply {
+            inCounter = this@MainActivity.inCounter
+            outCounter = this@MainActivity.outCounter
+
+            buttonAddIn.setOnClickListener{
+                this@MainActivity.inCounter.count++
+                invalidateAll()
+            }
+
+            buttonAddOut.setOnClickListener{
+                this@MainActivity.outCounter.count++
+                invalidateAll()
+            }
+        }
+
+        //addCounterActions()
     }
 
-    private fun addCounterActions() {
+    /*private fun addCounterActions() {
 
         binding.apply {
 
 
-            buttonAddOut.setOnClickListener {
-                binding.outCounter!!.count++
+            binding.buttonAddOut.setOnClickListener {
+                binding.outCounter.count++
             }
 
-            buttonAddIn.setOnClickListener {
-                binding.inCounter!!.count++
+            binding.buttonAddIn.setOnClickListener {
+                binding.inCounter.count++
             }
 
         }
-    }
+    }*/
 }
